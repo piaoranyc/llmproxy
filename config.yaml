@@ -1,0 +1,38 @@
+server:
+  port: 8080
+
+timeout: 180s
+retry: 3
+mode: random  # random or round-robin
+
+backends:
+  - name: deepseek
+    url: https://api.deepseek.com
+    api_key: sk-xxx
+    weight: 5
+    default_model: deepseek-chat
+    models:
+      - deepseek-chat
+      - deepseek-reasoner
+
+  - name: poe
+    url: https://api.poe.com/v1
+    api_key: 1_xxx
+    weight: 5
+    default_model: glm-4.7
+    models:
+      - glm-4.7
+      - gpt-5.2-instant
+      - claude-opus-4.5
+
+  - name: volc
+    url: "https://ark.cn-beijing.volces.com/api/coding/v3"
+    api_key: cxxx_xxxx
+    weight: 5
+    default_model: glm-4.7
+    models:
+      - glm-4.7
+      - kimi-k2.5
+      - deepseek-v3.2
+
+
