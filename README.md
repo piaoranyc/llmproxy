@@ -37,17 +37,27 @@ LLMProxy is a simple reverse proxy for Large Language Model (LLM) APIs. It provi
 
    timeout: 180s
    retry: 3
-   mode: random
+   mode: random  # random or round-robin
 
    backends:
      - name: deepseek
        url: https://api.deepseek.com
-       api_key: your-deepseek-api-key
+       api_key: your-api-key-here
        weight: 5
        default_model: deepseek-chat
        models:
          - deepseek-chat
          - deepseek-reasoner
+
+     - name: poe
+       url: https://api.poe.com/v1
+       api_key: your-poe-key
+       weight: 5
+       default_model: glm-4.7
+       models:
+         - glm-4.7
+         - gpt-5.2-instant
+         - claude-opus-4.5
    ```
 
 3. **Run**
@@ -123,17 +133,27 @@ LLMProxy 是一个简单的大型语言模型（LLM）API 反向代理，提供�
 
    timeout: 180s
    retry: 3
-   mode: random
+   mode: random  # random 或 round-robin
 
    backends:
      - name: deepseek
        url: https://api.deepseek.com
-       api_key: 你的deepseek-api-key
+       api_key: 你的-api-key
        weight: 5
        default_model: deepseek-chat
        models:
          - deepseek-chat
          - deepseek-reasoner
+
+     - name: poe
+       url: https://api.poe.com/v1
+       api_key: 你的-poe-key
+       weight: 5
+       default_model: glm-4.7
+       models:
+         - glm-4.7
+         - gpt-5.2-instant
+         - claude-opus-4.5
    ```
 
 3. **运行**
