@@ -144,7 +144,7 @@ Health check endpoint returning proxy status and backend count.
 ### Development
 
 #### Prerequisites
-- Go 1.20+ (global random seeding is automatically handled)
+- Go 1.20+
 
 #### Building from Source
 ```bash
@@ -303,7 +303,7 @@ backends:
 ### 开发
 
 #### 环境要求
-- Go 1.20+（全局随机种子已自动处理）
+- Go 1.20+
 
 #### 从源码编译
 ```bash
